@@ -1,0 +1,41 @@
+PROCEDURE dot_product(VAR ps INTEGER,VAR T1 ARRAY_OF INTEGER,VAR T2 ARRAY_OF INTEGER)
+VAR
+    
+    i: INTEGER
+
+BEGIN
+    
+    FOR i FROM 0 TO T1.length-1 STEP 1  DO
+        ps+ = T1[i]*T2[i]
+    END_FOR
+END
+
+ALGORITHM check vectors orthogonality
+
+VAR
+tab1 : ARRAY_OF INTEGER[];
+tab2 : ARRAY_OF INTEGER[];
+ps: INTEGER;
+dimtab : INTEGER;
+
+BEGIN
+//Saisir la dimension des deux tableaus 
+    write ("veuillez indiquer le nombre d'éléments à insérer dans chacun des deux tableaux ");
+    read(dimtab);
+    
+    // remplir le premier tableau tab1
+    FOR i FROM 0 TO dimtab -1  STEP 1 DO
+        read (tab1[i]);
+    END_FOR
+    // remplir le deuxième tableau tab2
+    FOR j FROM 0 TO dimtab -1 STEP 1  DO
+        read (T2[j]);
+    END_FOR
+
+//appel à la procédure dot_tab //
+dot_product(ps,tab1,tab2);
+IF (ps = 0) THEN
+    write ( "ce sont deux vecteur orthogonaux")
+ELSE
+    write (" ce ne sont pas de vecteurs orthogonaux")
+END_IF

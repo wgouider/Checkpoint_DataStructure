@@ -1,0 +1,24 @@
+PROCEDURE dot_product(ps INTEGER,T1 ARRAY_OF INTEGER,T2 ARRAY_OF INTEGER)
+VAR
+    
+    dimtab,i,j: INTEGER
+
+BEGIN
+    //Saisir la dimension du tableau 
+    write ("veuillez nous indiquer le nombre d'éléments à insérer dans les deux tableaux ");
+    read(dimtab);
+    
+
+    // remplir le tableau 1
+    FOR i FROM 0 TO dimtab -1  STEP 1 DO
+        read (T1[i]);
+    END_FOR
+    // remplir le tableau 2
+    FOR j FROM 0 TO dimtab -1 STEP 1  DO
+        read (T2[j]);
+    END_FOR
+
+    FOR i FROM 0 TO T1.length-1 STEP 1  DO
+        ps+ = T1[i]*T2[i]
+    END_FOR
+END

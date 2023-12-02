@@ -1,0 +1,67 @@
+ALGORITHM Sum_Of_Distinct_ELt
+VAR
+    tab1,tab2,tab3  : ARRAY_OF INTEGER[];
+    sum : INTEGER :=0
+    i,j,k:INTEGER := 0
+    taille_tab1: INTEGER
+    taille_tab2:INTEGER
+BEGIN
+    // insertion des elts du tableau 1
+    write("veuillez indiquer la taille du premier tableau ")
+    read(taille_tab1)
+    FOR i FROM 0 TO taille_tab1-1  STEP 1  DO
+        read(tab1[i])
+    END_FOR
+
+    // insertion des elts du tableau 2
+    write("veuillez indiquer la taille du deuxième tableau ")
+    read(taille_tab2)
+    FOR j FROM 0 TO taille_tab2-1  STEP 1  DO
+        read(tab2[j])
+    END_FOR
+
+    // Identification des nombres distincts en partant du premier tableau// 
+    WHILE (i<= tab1.length-1) DO
+            WHILE (j<= tab2.length - 1) DO
+                IF  (tab1[i] = tab2[j]) THEN
+                    break; 
+                END_IF               
+                IF (j  tab2.length -1) THEN
+                    sum1 := sum1 + tab1[i];
+                    tab3[k] := tab1[i]        
+                    k++
+                    break;
+                END_IF 
+                j++
+            END_WHILE
+            j:=0
+            i++
+            
+    END_WHILE
+// Identification des nombres distincts en partant du deuxième tableau//
+    //réinitilisation des compteurs 
+    i:=0
+    j:=0
+    WHILE (i<= tab2.length-1) DO
+            WHILE (j<= tab1.length - 1) DO
+                IF  (tab2[i] = tab1[j]) THEN
+                    break; 
+                END_IF               
+                IF (j= tab1.length -1) THEN
+                    sum2 := sum2 + tab2[i]
+                    tab3[k]:=tab2[i]
+                    
+                END_IF 
+                j++
+            END_WHILE
+            i++
+            j:=0;
+    END_WHILE
+    sum = sum1 + sum2
+Write ("the sum of distinct element is :" sum)
+write ("les élemnts distincts sont:")
+FOR k FROM 0 TO tab3.length -1 STEP 1  DO
+    write (tab3[k])
+END_FOR
+END
+

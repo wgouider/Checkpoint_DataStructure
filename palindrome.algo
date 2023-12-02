@@ -1,0 +1,30 @@
+ALGORITHM Palaindrome 
+VAR
+    Word : ARRAY_OF CHAR [];
+    i: INTEGER :=0;
+    Num1 : INTEGER
+
+BEGIN
+// Messsage pour saisir un mot
+    write("Veillez saisir un mot")
+    read(Word);
+    Num1 := word.length-1; // calcule la longeur du mot 
+   
+        WHILE  i<= Num1/2 DO
+            IF ((Word[i] = Word[Num1])) THEN
+                i++
+                Num1--
+            ELSE
+    Write ("le mot " Word " que vous avez saisi n'est un palindrome");
+
+            END_IF
+            
+            
+        
+        END_WHILE
+        
+   
+    Write ("le mot" Word " est un palindrome");
+
+
+END
